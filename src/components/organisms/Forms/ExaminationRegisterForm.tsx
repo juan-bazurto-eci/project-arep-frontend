@@ -66,8 +66,12 @@ const ExaminationRegisterForm = () => {
     formData.append("file", image);
     formData.append("label", number.toString());
     try {
-      const response = await fetch("http://localhost:5000/metrics", {
+      const response = await fetch("http://54.144.131.48:5000/metrics", {
         method: "POST",
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "*",
+        },
         body: formData,
       });
 
